@@ -25,8 +25,8 @@ export default function LoveIcon({ width, height }: LoveIconProps) {
           y2="30.5"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#3822EA" />
-          <stop offset="1" stop-color="#C7E9D7" />
+          <stop stopColor="#3822EA" />
+          <stop offset="1" stopColor="#C7E9D7" />
         </linearGradient>
       </defs>
     </svg>

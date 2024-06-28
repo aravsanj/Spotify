@@ -1,4 +1,4 @@
-import IconProps from "../types/IconProps";
+import IconProps from "./types/IconProps";
 
 interface LibraryIconProps extends IconProps {}
 

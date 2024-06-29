@@ -7,8 +7,8 @@ import SidebarItem from "./SidebarItem";
 
 export default function Sidebar() {
   return (
-    <div className="flex h-screen w-[100px] flex-col items-center gap-y-14 bg-black pt-10 transition-all duration-500 ease-in-out sm:items-start sm:px-6 md:w-[310px]">
-      <div className="flex flex-col gap-y-6">
+    <div className="flex min-h-screen w-[100px] flex-col gap-y-14 bg-black pt-10 transition-all duration-500 ease-in-out sm:items-start lg:w-[310px] lg:px-6">
+      <div className="flex w-full flex-col items-center gap-y-6 lg:items-start">
         <SidebarItem
           icon={<HomeIcon width={25} height={28} />}
           text="Home"
@@ -24,7 +24,7 @@ export default function Sidebar() {
           text="Your Library"
         />
       </div>
-      <div className="flex flex-col gap-y-6">
+      <div className="flex w-full flex-col items-center gap-y-6 lg:items-start">
         <SidebarItem
           icon={<AddIcon width={32} height={32} />}
           text="Create Playlist"

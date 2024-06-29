@@ -11,3 +11,9 @@ export const JAMENDO_GET_TRACKS = ({ limit }: { limit: number }) =>
 
 export const NEXT_GET_TRACKS = ({ limit }: { limit: number }) =>
   `/api/tracks?limit=${limit}`;
+
+export const JAMENDO_GET_ARTISTS = ({ limit }: { limit: number }) =>
+  `/v3.0/artists/?client_id=${CLIENT_ID}&format=jsonpretty&hasimage=true&limit=${limit}`;
+
+export const NEXT_GET_ARTISTS = ({ limit }: { limit: number }) =>
+  `/api/artists?limit=${limit}`;

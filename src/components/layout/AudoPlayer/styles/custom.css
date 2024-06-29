@@ -1,0 +1,19 @@
+.rhap_container {
+  outline: none;
+  background-color: #181818;
+  padding-top: 35px;
+}
+.rhap_progress-section {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.rhap_time {
+  color: #fff;
+  padding: 0 10px;
+}
+
+.rhap_main-controls-button {
+  color: #fff;
+  outline: none;
+}

@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Sidebar from "@/components/Sidebar";
+import Sidebar from "@/components/layout/Sidebar";
+import AudioPlayer from "@/components/layout/AudoPlayer";
+import PlayerContextProvider from "@/services/providers/PlayerContextProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,10 +20,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="flex">
-          <Sidebar />
-          {children}
-        </div>
+        <PlayerContextProvider>
+          <div className="flex bg-main-gradient pb-24">
+            <Sidebar />
+            {children}
+          </div>
+          <AudioPlayer />
+        </PlayerContextProvider>
       </body>
     </html>
   );

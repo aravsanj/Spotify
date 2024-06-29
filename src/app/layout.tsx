@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="flex">
+        <div className="bg-main-gradient flex">
           <Sidebar />
           {children}
         </div>

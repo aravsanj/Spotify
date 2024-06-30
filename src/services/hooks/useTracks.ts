@@ -6,7 +6,10 @@ import useSWR from "swr";
 export default function useTracks() {
   const { data, error, isLoading } = useSWR(
     NEXT_GET_TRACKS({ limit: 5 }),
-    getTracks
+    getTracks,
+    {
+      revalidateOnFocus: false,
+    }
   );
 
   return {

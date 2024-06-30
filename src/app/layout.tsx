@@ -4,6 +4,7 @@ import "./globals.css";
 import Sidebar from "@/components/layout/Sidebar";
 import AudioPlayer from "@/components/layout/AudoPlayer";
 import PlayerContextProvider from "@/services/providers/PlayerContextProvider";
+import Header from "@/components/layout/Hero/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,7 +24,16 @@ export default function RootLayout({
         <PlayerContextProvider>
           <div className="flex bg-main-gradient pb-24">
             <Sidebar />
-            {children}
+            <div className="w-full">
+              <div className="flex justify-center pt-10">
+                <div className="container">
+                  <div className="w-full px-6 md:px-4 lg:px-10">
+                    <Header />
+                  </div>
+                </div>
+              </div>
+              {children}
+            </div>
           </div>
           <AudioPlayer />
         </PlayerContextProvider>

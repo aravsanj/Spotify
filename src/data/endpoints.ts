@@ -17,3 +17,24 @@ export const JAMENDO_GET_ARTISTS = ({ limit }: { limit: number }) =>
 
 export const NEXT_GET_ARTISTS = ({ limit }: { limit: number }) =>
   `/api/artists?limit=${limit}`;
+
+export const JAMENDO_SEARCH_TRACKS = ({
+  query,
+  offset,
+  limit,
+}: {
+  query: string;
+  offset: number;
+  limit: number;
+}) =>
+  `/v3.0/tracks/?client_id=${CLIENT_ID}&format=jsonpretty&fullcount=true&search=${query}&limit=${limit}&offset=${offset}`;
+
+export const NEXT_SEARCH_TRACKS = ({
+  query,
+  offset,
+  limit,
+}: {
+  query: string;
+  offset: number;
+  limit: number;
+}) => `/api/tracks/search?query=${query}&offset=${offset}&limit=${limit}`;

@@ -1,7 +1,8 @@
 .rhap_container {
   outline: none;
   background-color: #181818;
-  padding-top: 35px;
+  padding: 20px;
+  height: 100px;
 }
 .rhap_progress-section {
   width: 50%;

@@ -20,7 +20,7 @@ export default function MainLayout({
       <Sidebar />
       <SearchContextProvider>
         <div className="w-full pb-[200px]">
-          <div className={`flex justify-center pt-2 ${headerBg}`}>
+          <div className={`flex justify-center ${headerBg}`}>
             <div className="container">
               <div className="w-full px-6 md:px-4 lg:px-10">
                 <Header />

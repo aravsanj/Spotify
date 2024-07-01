@@ -52,8 +52,8 @@ export default function SearchContent() {
 
       {isPageEnd && !isValidating && query && (
         <p className="p-4 text-white">
-          We've reached the end of the page. Perhaps you'd like to explore
-          further by conducting a new search?
+          We&apos;ve reached the end of the page. Perhaps you&apos;d like to
+          explore further by conducting a new search?
         </p>
       )}
     </div>

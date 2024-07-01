@@ -7,7 +7,7 @@ import SidebarItem from "./SidebarItem";
 
 export default function Sidebar() {
   return (
-    <div className="flex min-h-screen w-[100px] flex-col gap-y-14 bg-black pt-10 transition-all duration-500 ease-in-out sm:items-start lg:w-[310px] lg:px-6">
+    <div className="fixed left-0 flex min-h-screen w-[100px] flex-col gap-y-14 bg-black pt-10 transition-all duration-500 ease-in-out sm:items-start lg:w-[310px] lg:px-6">
       <div className="flex w-full flex-col items-center gap-y-6 lg:items-start">
         <SidebarItem
           icon={<HomeIcon width={25} height={28} />}

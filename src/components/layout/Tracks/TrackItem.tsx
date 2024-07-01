@@ -1,4 +1,4 @@
-import PlayIcon from "@/components/ui/icons/PlayIcon";
+import PlayButton from "@/components/ui/PlayButton";
 import Image from "next/image";
 
 interface TrackItemProps {
@@ -39,18 +39,11 @@ export default function TrackItem({
             <span className="block truncate text-white opacity-70">
               {artist_name}
             </span>
-            <button
+            <PlayButton
               onClick={() =>
-                updateCurrentTrack({
-                  name,
-                  artist_name,
-                  image,
-                  audio,
-                })
+                updateCurrentTrack({ name, artist_name, image, audio })
               }
-            >
-              <PlayIcon width={50} height={50} />
-            </button>
+            />
           </div>
         </div>
       </div>

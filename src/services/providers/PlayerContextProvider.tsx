@@ -1,8 +1,10 @@
 "use client";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { PlayerContext } from "../contexts/PlayerContext";
+import H5AudioPlayer from "react-h5-audio-player";
 
 type currentTrackType = {
+  id: string;
   name: string;
   artist_name: string;
   image: string;
@@ -18,8 +20,10 @@ export default function PlayerContextProvider({
   const [currentTrack, setCurrentTrack] = useState<null | currentTrackType>(
     null
   );
+  const playerRef = useRef<H5AudioPlayer>(null);
 
   function updateCurrentTrack(track: {
+    id: string;
     name: string;
     artist_name: string;
     image: string;
@@ -35,6 +39,7 @@ export default function PlayerContextProvider({
         currentTrack,
         updateCurrentTrack,
         setIsPlaying,
+        playerRef,
       }}
     >
       {children}

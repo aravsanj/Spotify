@@ -3,7 +3,7 @@ import Tracks from "@/components/layout/Tracks";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen w-full justify-center pt-10">
+    <div className="flex min-h-screen w-full justify-center bg-main-gradient pb-[200px] pt-10">
       <div className="container flex flex-col items-center gap-y-10">
         <Hero />
         <Tracks />

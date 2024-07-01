@@ -16,11 +16,10 @@ export default function MainLayout({
   let headerBg = path === "/" ? "bg-transparent" : "bg-black";
 
   return (
-    <div className={`flex ${bg} h-full pb-[120px]`}>
+    <div className={`flex ${bg} min-h-screen`}>
       <Sidebar />
-      <div className="w-[100px] lg:w-[310px] lg:px-6"></div>
       <SearchContextProvider>
-        <div className="w-full">
+        <div className="w-full pb-[200px]">
           <div className={`flex justify-center pt-2 ${headerBg}`}>
             <div className="container">
               <div className="w-full px-6 md:px-4 lg:px-10">

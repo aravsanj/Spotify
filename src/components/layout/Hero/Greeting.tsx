@@ -1,4 +1,4 @@
-import getTimeBasedGreeting from "@/utils/getTimeBasedGreeting";
+import getTimeBasedGreeting from "@/lib/utils/getTimeBasedGreeting";
 
 export default function Greeting() {
   return (

@@ -43,17 +43,19 @@ function PlaySummary() {
 }
 
 export default function AudioPlayer() {
-  const { currentTrack, setIsPlaying } = usePlayer();
+  const { currentTrack, setIsPlaying, playerRef } = usePlayer();
 
   const audio = currentTrack?.audio;
 
   return (
     <div className="fixed bottom-0 w-full">
       <ReactAudioPlayer
+        ref={playerRef}
         autoPlay
         src={audio}
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
+        onEnded={() => setIsPlaying(false)}
         layout="stacked-reverse"
         customAdditionalControls={[<PlaySummary key="play-summary" />]}
         volume={0.5}

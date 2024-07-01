@@ -6,18 +6,23 @@ import usePlayer from "@/services/hooks/usePlayer";
 
 export default function TrackList() {
   const { tracks, isLoading } = useTracks();
-  const { updateCurrentTrack } = usePlayer();
+  const { updateCurrentTrack, currentTrack, isPlaying, playerRef } =
+    usePlayer();
 
   return (
     <div className="grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
       {tracks?.map((track: Track) => (
         <TrackItem
           key={track.id}
+          id={track.id}
           name={track.name}
           artist_name={track.artist_name}
           image={track.image}
           audio={track.audio}
           updateCurrentTrack={updateCurrentTrack}
+          currentTrack={currentTrack}
+          isPlaying={isPlaying}
+          playerRef={playerRef}
         />
       ))}
     </div>

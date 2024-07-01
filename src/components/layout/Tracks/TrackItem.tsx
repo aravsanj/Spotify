@@ -1,12 +1,24 @@
-import PlayIcon from "@/components/ui/icons/PlayIcon";
+import PlayButton from "@/components/ui/PlayButton";
 import Image from "next/image";
+import H5AudioPlayer from "react-h5-audio-player";
 
 interface TrackItemProps {
+  id: string;
   name: string;
   artist_name: string;
   image: string;
   audio: string;
+  currentTrack: {
+    id: string;
+    name: string;
+    artist_name: string;
+    image: string;
+    audio: string;
+  } | null;
+  isPlaying: boolean;
+  playerRef: React.RefObject<H5AudioPlayer>;
   updateCurrentTrack: (track: {
+    id: string;
     name: string;
     artist_name: string;
     image: string;
@@ -15,12 +27,36 @@ interface TrackItemProps {
 }
 
 export default function TrackItem({
+  id,
   name,
   artist_name,
   image,
   audio,
+  currentTrack,
+  isPlaying,
+  playerRef,
   updateCurrentTrack,
 }: TrackItemProps) {
+  const isCurrentPlaying = currentTrack?.id === id && isPlaying;
+  function onPlay() {
+    if (currentTrack?.id === id) {
+      playerRef.current?.audio?.current?.play();
+      return;
+    }
+
+    updateCurrentTrack({
+      id,
+      name,
+      artist_name,
+      image,
+      audio,
+    });
+  }
+
+  function onPause() {
+    playerRef.current?.audio?.current?.pause();
+  }
+
   return (
     <div className="w-full rounded-lg bg-white bg-opacity-[0.04] py-6">
       <div className="flex justify-center">
@@ -39,18 +75,11 @@ export default function TrackItem({
             <span className="block truncate text-white opacity-70">
               {artist_name}
             </span>
-            <button
-              onClick={() =>
-                updateCurrentTrack({
-                  name,
-                  artist_name,
-                  image,
-                  audio,
-                })
-              }
-            >
-              <PlayIcon width={50} height={50} />
-            </button>
+            <PlayButton
+              onPlay={() => onPlay()}
+              onPause={() => onPause()}
+              isPlaying={isCurrentPlaying}
+            />
           </div>
         </div>
       </div>

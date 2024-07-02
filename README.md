@@ -18,7 +18,8 @@
 
 [spotify-ruby-psi.vercel.app](https://spotify-ruby-psi.vercel.app/)
 
-> [!IMPORTANT] > **This project was done as part of a 5-day machine test.**
+> [!IMPORTANT]
+> **This project was done as part of a 5-day machine test.**
 
 ## 🚀 Getting Started
 
@@ -36,8 +37,8 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-> [NOTE]
-> You will need a [Jamendo API](https://developer.jamendo.com/v3.0/docs) client id on your local env.
+>[!WARNING]
+>You will need a [Jamendo API](https://developer.jamendo.com/v3.0/docs) client id on your local env.
 
 ## 📂 Folder structure
 
@@ -86,7 +87,7 @@ This creates separation between the code that
 - does actually fetches it and manages the state
 - renders UI.
 
-Data travels from Data access layer > business logic layer > presentation layer.
+Data travels from data access layer > business logic layer > presentation layer.
 
 ## 🎵 Jamendo API
 
@@ -128,7 +129,7 @@ Only if they're shared among different layers, they're stored in `lib` folder.
 
 ## 🤝 Contribution
 
-> [Note]
+> [!NOTE]
 > This project was done as part of a 5-day machine test. But it will be improved up on.
 
 ## 📃 License

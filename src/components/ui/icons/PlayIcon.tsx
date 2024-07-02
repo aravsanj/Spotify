@@ -1,8 +1,28 @@
 import IconProps from "./types/IconProps";
 
-interface PlayIconProps extends IconProps {}
+interface IconPropsWithClass extends Omit<IconProps, "width" | "height"> {
+  className: string;
+}
 
-export default function PlayIcon({ width, height }: PlayIconProps) {
+interface IconPropsWithoutClass extends IconProps {
+  className?: never;
+}
+
+type PlayIconProps = IconPropsWithClass | IconPropsWithoutClass;
+
+export default function PlayIcon(props: PlayIconProps) {
+  let { className } = props;
+  let width = 70;
+  let height = 70;
+
+  if ("width" in props) {
+    width = props.width;
+  }
+
+  if ("height" in props) {
+    height = props.height;
+  }
+
   return (
     <svg
       width={width}
@@ -10,8 +30,9 @@ export default function PlayIcon({ width, height }: PlayIconProps) {
       viewBox="0 0 70 70"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
     >
-      <g filter="url(#filter0_d_131_2989)">
+      <g filter="">
         <circle cx="35" cy="35" r="30" fill="#65D36E" />
         <path
           d="M47.5 35C48.5 34 48.5 32 47.5 31L31 22C30 21 28 22 28 24V46C28 48 30 49 31 48L47.5 35Z"

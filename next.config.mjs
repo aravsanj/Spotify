@@ -7,6 +7,11 @@ const nextConfig = {
         hostname: "usercontent.jamendo.com",
         port: "",
       },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        port: "",
+      },
     ],
   },
 };

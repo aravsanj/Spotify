@@ -48,7 +48,7 @@ export default function AudioPlayer() {
   const audio = currentTrack?.audio;
 
   return (
-    <div className="fixed bottom-0 w-full">
+    <div className="fixed bottom-0 z-20 w-full">
       <ReactAudioPlayer
         ref={playerRef}
         autoPlay

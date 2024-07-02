@@ -1,6 +1,8 @@
 import PlayButton from "@/components/ui/PlayButton";
 import Image from "next/image";
 import H5AudioPlayer from "react-h5-audio-player";
+import { currentTrack } from "@/lib/types/currentTrack";
+import { updateCurrentTrack } from "../../../lib/types/updateCurrentTrack";
 
 interface TrackItemProps {
   id: string;
@@ -8,22 +10,10 @@ interface TrackItemProps {
   artist_name: string;
   image: string;
   audio: string;
-  currentTrack: {
-    id: string;
-    name: string;
-    artist_name: string;
-    image: string;
-    audio: string;
-  } | null;
+  currentTrack: currentTrack;
   isPlaying: boolean;
   playerRef: React.RefObject<H5AudioPlayer>;
-  updateCurrentTrack: (track: {
-    id: string;
-    name: string;
-    artist_name: string;
-    image: string;
-    audio: string;
-  }) => void;
+  updateCurrentTrack: updateCurrentTrack;
 }
 
 export default function TrackItem({

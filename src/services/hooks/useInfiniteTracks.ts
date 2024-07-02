@@ -8,8 +8,6 @@ export default function useInfiniteTracks() {
 
     if (pageIndex === 0) return NEXT_GET_TRACKS({ offset: 0, limit: 10 });
 
-    console.log(previousPageData.headers.next);
-
     return previousPageData.headers.next;
   };
 

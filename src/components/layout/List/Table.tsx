@@ -1,39 +1,7 @@
 import React from "react";
 import TitleCard from "./TitleCard";
-import H5AudioPlayer from "react-h5-audio-player";
 import ClockIcon from "@/components/ui/icons/ClockIcon";
-
-type currentTrack = {
-  id: string;
-  name: string;
-  artist_name: string;
-  image: string;
-  audio: string;
-};
-
-type track = {
-  id: string;
-  title: string;
-  audio: string;
-  image: string;
-  artist_name: string;
-  updateCurrentTrack: (track: {
-    id: string;
-    name: string;
-    artist_name: string;
-    image: string;
-    audio: string;
-  }) => void;
-  currentTrack: currentTrack | null;
-  isPlaying: boolean;
-  playerRef: React.RefObject<H5AudioPlayer>;
-};
-
-type TableItem = {
-  track: track;
-  album: string;
-  duration: string;
-};
+import { TableItem } from "./types/TableItem";
 
 type TableProps = {
   data: TableItem[] | undefined;

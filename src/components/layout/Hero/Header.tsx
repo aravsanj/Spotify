@@ -2,7 +2,7 @@
 import BackIcon from "@/components/ui/icons/BackIcon";
 import ForwardIcon from "@/components/ui/icons/ForwardIcon";
 import SearchInput from "@/components/ui/SearchInput";
-import { notFound, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 type HeaderConfig = {
   [key: string]: {

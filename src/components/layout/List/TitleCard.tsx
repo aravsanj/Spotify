@@ -62,7 +62,7 @@ export default function TitleCard({
         />
       </div>
       <div className="flex flex-col">
-        <span className="w-28 truncate text-nowrap text-sm font-semibold sm:text-base">
+        <span className="w-28 truncate text-nowrap text-sm font-semibold sm:w-48 sm:text-base md:w-60">
           {title}
         </span>
         <span className="font-[#B3B3B3] text-xs">{artist_name}</span>

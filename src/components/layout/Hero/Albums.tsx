@@ -10,7 +10,9 @@ export default function Albums() {
   return (
     <div className="grid grid-cols-2 gap-x-10 gap-y-6 md:grid-cols-3 lg:grid-cols-2 lg:gap-x-8 xl:grid-cols-3">
       {isLoading
-        ? loadingSkeletons.map((_, index) => <AlbumItemSkeleton />)
+        ? loadingSkeletons.map((_, index) => (
+            <AlbumItemSkeleton key={`skeleton-${index}`} />
+          ))
         : albums?.map((album: Album) => (
             <AlbumItem key={album.id} album={album} />
           ))}

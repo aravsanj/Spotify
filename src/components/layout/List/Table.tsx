@@ -1,6 +1,7 @@
 import React from "react";
 import TitleCard from "./TitleCard";
 import H5AudioPlayer from "react-h5-audio-player";
+import ClockIcon from "@/components/ui/icons/ClockIcon";
 
 type currentTrack = {
   id: string;
@@ -48,7 +49,9 @@ export default function TableComponent({ data }: TableProps) {
           <th className="hidden p-2 text-left text-[#B3B3B3] sm:block">
             ALBUM
           </th>
-          <th className="p-2 text-left text-[#B3B3B3]">⏰</th>
+          <th className="p-2 text-left text-[#B3B3B3]">
+            <ClockIcon width={28} height={28} />
+          </th>
         </tr>
         <tr>
           <td colSpan={4}>

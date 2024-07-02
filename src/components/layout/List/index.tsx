@@ -6,7 +6,7 @@ import usePlayer from "@/services/hooks/usePlayer";
 import { parseSecondsToTime } from "@/lib/utils/parseSecondsToTime";
 import useInfiniteTracks from "@/services/hooks/useInfiniteTracks";
 import { useEffect } from "react";
-import { Skeleton } from "@/components/ui/Skeleton";
+import TableItemSkeleton from "./skeletons/TableItemSkeleton";
 const TableComponent = dynamic(() => import("./Table"), {
   ssr: false,
 });
@@ -21,20 +21,28 @@ type track = {
   duration: number;
 };
 
-type table = {
-  track: {
-    id: string;
-    title: string;
-    audio: string;
-    image: string;
-    artist_name: string;
-    updateCurrentTrack: (audio: string) => void;
-    currentTrack: string;
-    isPlaying: boolean;
-    playerRef: React.RefObject<HTMLAudioElement>;
-  };
+type trackItem = {
+  id: string;
+  title: string;
   album: string;
   duration: number;
+  audio: string;
+  image: string;
+  artist_name: string;
+  updateCurrentTrack: (audio: string) => void;
+  currentTrack: string;
+  isPlaying: boolean;
+  playerRef: React.RefObject<HTMLAudioElement>;
+};
+
+type TableItem = {
+  track: trackItem;
+  album: string;
+  duration: number;
+};
+
+type TableProps = {
+  data: TableItem[];
 };
 
 export default function List() {
@@ -78,12 +86,7 @@ export default function List() {
     <div className="flex flex-col">
       <Head />
       <TableComponent data={table} />
-      {isValidating && (
-        <>
-          <Skeleton className="mt-4 h-10 w-full" />
-          <Skeleton className="mt-4 h-10 w-full" />
-        </>
-      )}
+      {isValidating && <TableItemSkeleton />}
     </div>
   );
 }

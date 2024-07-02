@@ -1,22 +1,41 @@
 import React from "react";
 import TitleCard from "./TitleCard";
+import H5AudioPlayer from "react-h5-audio-player";
+
+type currentTrack = {
+  id: string;
+  name: string;
+  artist_name: string;
+  image: string;
+  audio: string;
+};
 
 type track = {
   id: string;
   title: string;
-  album: string;
-  duration: number;
   audio: string;
   image: string;
   artist_name: string;
-  updateCurrentTrack: (audio: string) => void;
-  currentTrack: string;
+  updateCurrentTrack: (track: {
+    id: string;
+    name: string;
+    artist_name: string;
+    image: string;
+    audio: string;
+  }) => void;
+  currentTrack: currentTrack | null;
   isPlaying: boolean;
-  playerRef: React.RefObject<HTMLAudioElement>;
+  playerRef: React.RefObject<H5AudioPlayer>;
+};
+
+type TableItem = {
+  track: track;
+  album: string;
+  duration: string;
 };
 
 type TableProps = {
-  data: { track: track; album: string; duration: number }[];
+  data: TableItem[] | undefined;
 };
 
 export default function TableComponent({ data }: TableProps) {

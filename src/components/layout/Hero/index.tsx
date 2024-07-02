@@ -1,12 +1,6 @@
 "use client";
 import Greeting from "./Greeting";
-import AlbumItemSkeleton from "./AlbumItemSkeleton";
-import dynamic from "next/dynamic";
-
-const Albums = dynamic(() => import("./Albums"), {
-  ssr: false,
-  loading: () => <AlbumItemSkeleton />,
-});
+import Albums from "./Albums";
 
 export default function Hero() {
   return (

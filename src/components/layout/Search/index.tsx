@@ -2,6 +2,7 @@
 import useSearch from "@/services/hooks/useSearch";
 import SearchItem from "./SearchItem";
 import { Skeleton } from "@/components/ui/Skeleton";
+import SearchItemSkeleton from "./skeletons/SearchItemSkeleton";
 
 export default function SearchContent() {
   const { results, isValidating, isPageEnd, query, isLoading, nextPage } =
@@ -36,12 +37,7 @@ export default function SearchContent() {
         </button>
       )}
 
-      {isValidating && (
-        <>
-          <Skeleton className="h-[70px] w-[95%]" />
-          <Skeleton className="h-[70px] w-[95%]" />
-        </>
-      )}
+      {isValidating && <SearchItemSkeleton />}
 
       {!query && (
         <p className="p-4 text-white">

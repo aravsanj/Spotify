@@ -1,5 +1,14 @@
 import usePlayer from "@/services/hooks/usePlayer";
 import Image from "next/image";
+import H5AudioPlayer from "react-h5-audio-player";
+
+type currentTrack = {
+  id: string;
+  name: string;
+  artist_name: string;
+  image: string;
+  audio: string;
+};
 
 interface TitleCardProps {
   id: string;
@@ -7,10 +16,16 @@ interface TitleCardProps {
   title: string;
   artist_name: string;
   audio: string;
-  updateCurrentTrack: (audio: string) => void;
-  currentTrack: any;
+  updateCurrentTrack: (track: {
+    id: string;
+    name: string;
+    artist_name: string;
+    image: string;
+    audio: string;
+  }) => void;
+  currentTrack: currentTrack | null;
   isPlaying: boolean;
-  playerRef: React.RefObject<HTMLAudioElement>;
+  playerRef: React.RefObject<H5AudioPlayer>;
 }
 
 export default function TitleCard({

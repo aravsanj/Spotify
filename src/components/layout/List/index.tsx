@@ -1,5 +1,4 @@
 "use client";
-import useTracks from "@/services/hooks/useTracks";
 import Head from "./Head";
 import dynamic from "next/dynamic";
 import usePlayer from "@/services/hooks/usePlayer";
@@ -7,43 +6,10 @@ import { parseSecondsToTime } from "@/lib/utils/parseSecondsToTime";
 import useInfiniteTracks from "@/services/hooks/useInfiniteTracks";
 import { useEffect } from "react";
 import TableItemSkeleton from "./skeletons/TableItemSkeleton";
+import { trackInfinite } from "./types/trackInfinite";
 const TableComponent = dynamic(() => import("./Table"), {
   ssr: false,
 });
-
-type track = {
-  id: string;
-  name: string;
-  audio: string;
-  image: string;
-  artist_name: string;
-  album_name: string;
-  duration: number;
-};
-
-type trackItem = {
-  id: string;
-  title: string;
-  album: string;
-  duration: number;
-  audio: string;
-  image: string;
-  artist_name: string;
-  updateCurrentTrack: (audio: string) => void;
-  currentTrack: string;
-  isPlaying: boolean;
-  playerRef: React.RefObject<HTMLAudioElement>;
-};
-
-type TableItem = {
-  track: trackItem;
-  album: string;
-  duration: number;
-};
-
-type TableProps = {
-  data: TableItem[];
-};
 
 export default function List() {
   const { tracks, nextPage, isValidating } = useInfiniteTracks();
@@ -66,7 +32,7 @@ export default function List() {
     };
   }, [nextPage]);
 
-  const table = tracks?.map((track: track) => ({
+  const table = tracks?.map((track: trackInfinite) => ({
     track: {
       id: track.id,
       title: track.name,

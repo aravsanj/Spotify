@@ -1,28 +1,18 @@
+import { currentTrack } from "@/lib/types/currentTrack";
+import { playerRef } from "@/lib/types/playerRef";
+import { updateCurrentTrack } from "@/lib/types/updateCurrentTrack";
 import { createContext, Dispatch, RefObject, SetStateAction } from "react";
-import H5AudioPlayer from "react-h5-audio-player";
 
 interface PlayerContextProps {
   isPlaying: boolean;
 
-  currentTrack: {
-    id: string;
-    name: string;
-    artist_name: string;
-    image: string;
-    audio: string;
-  } | null;
+  currentTrack: currentTrack;
 
-  updateCurrentTrack: (track: {
-    id: string;
-    name: string;
-    artist_name: string;
-    image: string;
-    audio: string;
-  }) => void;
+  updateCurrentTrack: updateCurrentTrack;
 
   setIsPlaying: Dispatch<SetStateAction<boolean>>;
 
-  playerRef: RefObject<H5AudioPlayer>;
+  playerRef: playerRef;
 }
 
 export const PlayerContext = createContext<PlayerContextProps>(

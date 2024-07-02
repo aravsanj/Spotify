@@ -6,8 +6,7 @@ import Link from "next/link";
 
 export default function NotFound() {
   const router = useRouter();
-  const { updateCurrentTrack, isPlaying, playerRef, currentTrack } =
-    usePlayer();
+  const { updateCurrentTrack, isPlaying, playerRef } = usePlayer();
 
   const sampleTrack = {
     id: "1532771",
